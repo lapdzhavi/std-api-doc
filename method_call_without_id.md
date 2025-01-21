@@ -1,6 +1,6 @@
 ### API Endpoint: Call Model Method
 
-#### **URL**: `/api/<string:model>/<int:id>/method/<string:method_name>`
+#### **URL**: `/api/<string:model>/method/<string:method_name>`
 
 #### **Method**: `GET`
 
@@ -75,10 +75,47 @@ BODY
    ```
 
 3. **Calling a Method With Keyword Arguments**  
-   Example: Calling `action_invoice_create` with `date_invoice`.  
+   Example: Calling `magento_update_warehouse` with {
+        "order_id": "Magento order ID",
+        "items": [
+            {
+              "order_line_id": "Magento order line ID",
+              "warehouse_source_code": "Source codes in Magento",
+              "tracking_number": "Tracking Number"
+             }
+        ]
+    }.  
    URL:  
    ```
-   GET http://localhost:8069/api/sale.order/method/action_invoice_create/?token=1ec448c54a004165b4c0da976b227260&kwargs={"date_invoice":"2016-09-02"}
+   GET http://localhost:8069/api/sale.order/method/magento_update_warehouse/?token=1ec448c54a004165b4c0da976b227260&kwargs={
+        "order_id": "Magento order ID",
+        "items": [
+            {
+              "order_line_id": "Magento order line ID",
+              "warehouse_source_code": "Source codes in Magento",
+              "tracking_number": "Tracking Number"
+             }
+        ]
+    }
+   ```  
+   **Response**:
+   ```json
+   {
+       "success": "12"
+   }
+   ```
+    
+   ```
+   GET http://localhost:8069/api/sale.order/method/magento_update_tracking_number/?token=1ec448c54a004165b4c0da976b227260&kwargs={
+        "order_id": "Magento order ID",
+        "items": [
+            {
+              "order_line_id": "Magento order line ID",
+              "warehouse_source_code": "Source codes in Magento",
+              "tracking_number": "Tracking Number"
+             }
+        ]
+    }
    ```  
    **Response**:
    ```json
