@@ -9,16 +9,16 @@
 #### **Description**:
 This endpoint allows users to call methods on specific records of any Odoo model. It supports both positional (`args`) and keyword (`kwargs`) arguments. 
 
-MODEL
+**MODEL**
 
 ```sale.order```
 
-METHOD
+**METHOD**
 
 1. ```magento_update_warehouse```
 2. ```magento_update_tracking_number```
 
-BODY
+**ARGUMENTS**
 ```json
 {
     "kwargs": 
